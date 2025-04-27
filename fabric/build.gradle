@@ -48,7 +48,7 @@ dependencies {
     implementation(include("com.github.Chocohead:Fabric-ASM:v2.3"))
 
     // Mod menu
-    modImplementation("com.terraformersmc:modmenu:3.2.3")
+    modCompileOnly("com.terraformersmc:modmenu:3.2.3")
     modImplementation("me.shedaniel.cloth:cloth-config:${cloth_config_version}")
 
     // Valkyrien Skies 2
@@ -65,13 +65,13 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
     // Create compats
-    modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_fabric_version}") {
+    modCompileOnly("com.simibubi.create:create-fabric-${minecraft_version}:${create_fabric_version}") {
         exclude group: 'com.github.AlphaMode', module: 'fakeconfigtoml'
     }
-    modImplementation("com.jozufozu.flywheel:flywheel-fabric-${minecraft_version}:${flywheel_version_fabric}")
-    modImplementation("com.tterrag.registrate_fabric:Registrate:${registrate_version}")
+    modCompileOnly("com.jozufozu.flywheel:flywheel-fabric-${minecraft_version}:${flywheel_version_fabric}")
+    modCompileOnly("com.tterrag.registrate_fabric:Registrate:${registrate_version}")
 
-    modImplementation("io.github.fabricators_of_create.Porting-Lib:Porting-Lib:$port_lib_version")
+    modCompileOnly("io.github.fabricators_of_create.Porting-Lib:Porting-Lib:$port_lib_version")
 //    for (String module in port_lib_modules.split(",")) {
 //        modCompileOnly("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version")
 //    }
@@ -82,25 +82,25 @@ dependencies {
     modCompileOnly("io.github.tropheusj:milk-lib:${milk_lib_version}")
 
     // Eureka
-    modImplementation("maven.modrinth:eureka:1.18.2-fabric-1.4.0-beta.1")
+    modCompileOnly("maven.modrinth:eureka:1.18.2-fabric-1.4.0-beta.1")
 
     // Clockwork
-    modImplementation("maven.modrinth:create-clockwork:8JdnD9wo")
+    modCompileOnly("maven.modrinth:create-clockwork:8JdnD9wo")
 
     // ComputerCraft
-    modImplementation("maven.modrinth:cc-tweaked:1.114.0")
+    modCompileOnly("maven.modrinth:cc-tweaked:1.114.0")
 
     // CBC
     String rplSuffix = Boolean.valueOf(use_local_rpl_build) ? "" : "-build.${rpl_build}";
-    modImplementation("com.rbasamoyai:ritchiesprojectilelib:${rpl_version}+mc.${minecraft_version}-fabric" + rplSuffix) { transitive = false }
-    modImplementation files("jars/createbigcannons-5.6.0-dev-mc.1.20.1-fabric-build.87.jar")
+    modCompileOnly ("com.rbasamoyai:ritchiesprojectilelib:${rpl_version}+mc.${minecraft_version}-fabric" + rplSuffix) { transitive = false }
+    modCompileOnly files("jars/createbigcannons-5.6.0-dev-mc.1.20.1-fabric-build.87.jar")
 
     // Copycat+
-    modImplementation("maven.modrinth:copycats:2.1.4+mc.1.20.1-fabric")
+    modCompileOnly("maven.modrinth:copycats:2.1.4+mc.1.20.1-fabric")
 
     // CC&A
     modApi('teamreborn:energy:2.3.0')
-    modImplementation("maven.modrinth:createaddition:vV4bZmhm")
+    modCompileOnly("maven.modrinth:createaddition:vV4bZmhm")
 
     // VoxelMap Updated
     modCompileOnly("maven.modrinth:voxelmap-updated:1.20.1-1.12.13")
@@ -109,13 +109,13 @@ dependencies {
     modCompileOnly("maven.modrinth:presence-footsteps:1.9.4+1.20.1")
 
     // Net Music
-    modImplementation("maven.modrinth:net-music:1.0.0")
+    modCompileOnly("maven.modrinth:net-music:1.0.0")
 
     //Xaero's minimap
     modCompileOnly("maven.modrinth:xaeros-minimap-fair:FP24.2.0_Fabric_1.20")
 
     // TaCZ
-    modImplementation("maven.modrinth:timeless-and-classics-zero:1.0.2-hotfix3")
+    modCompileOnly("maven.modrinth:timeless-and-classics-zero:1.0.2-hotfix3")
 }
 
 processResources {
