@@ -115,7 +115,7 @@ dependencies {
     modCompileOnly("maven.modrinth:xaeros-minimap-fair:FP24.2.0_Fabric_1.20")
 
     // TaCZ
-    modImplementation("maven.modrinth:timeless-and-classics-zero:1.0.2-hotfix3")
+    modCompileOnly("curse.maven:timeless-and-classics-zero-1028108:6518539")
 }
 
 processResources {
