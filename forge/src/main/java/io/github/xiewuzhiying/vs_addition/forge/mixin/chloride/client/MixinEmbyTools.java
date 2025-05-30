@@ -1,6 +1,6 @@
-package io.github.xiewuzhiying.vs_addition.forge.mixin.embeddiumplus.client;
+package io.github.xiewuzhiying.vs_addition.forge.mixin.chloride.client;
 
-import me.srrapero720.embeddiumplus.EmbyTools;
+import me.srrapero720.chloride.Tools;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 
 @Pseudo
-@Mixin(EmbyTools.class)
+@Mixin(Tools.class)
 public abstract class MixinEmbyTools {
     @ModifyVariable(
             method = "isEntityInRange(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;II)Z",
