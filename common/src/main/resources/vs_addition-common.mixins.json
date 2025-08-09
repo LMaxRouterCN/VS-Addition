@@ -9,7 +9,6 @@
     "computercraft.MixinTurtleBrain",
     "computercraft.MixinTurtleMoveCommand",
     "computercraft.MixinWirelessModemPeripheral",
-    "computercraft.MixinWirelessNetwork",
     "copycats.MixinCCCopycatBlock",
     "copycats.MixinCCCopycatBlockEntity",
     "copycats.MixinCopycatBlocks",
