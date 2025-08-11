@@ -1,3 +1,11 @@
+有人觉得我应该把这个版本上传到Modrinth或curseforge上并起一个正式的名称以方便其他人寻找, 所以我这么做了.  
+Some people thought I should upload this version to Modrinth or curseforge and give it an official name so that others could find it easily, so I did.  
+遗憾的是我是个代码新手, 我能做的仅仅只是维持这个mod的生命, 进行一些简单的删改操作, 我并不能让这个mod起死回生.  
+Unfortunately, I am a novice when it comes to coding, so all I can do is maintain this mod and make some simple edits. I cannot bring this mod back to life.  
+
+
+---
+
 # VS Addition
 
 [![curseforge](https://cf.way2muchnoise.eu/full_1027757_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/vs-addition)
