@@ -1,6 +1,6 @@
 modLoader = "kotlinforforge"
 loaderVersion = "[4,)"
-issueTrackerURL = "https://github.com/xiewuzhiying/VS-Addition/issues"
+issueTrackerURL = "https://github.com/LMaxRouterCN/VS-Addition-continue/issues"
 license = "Apache-2.0"
 
 [[mods]]
