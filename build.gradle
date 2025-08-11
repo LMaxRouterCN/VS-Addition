@@ -76,16 +76,16 @@ String gitRevision = "git rev-parse HEAD".execute().text.trim()
 version = "${minecraft_version}-${mod_version}+${gitRevision.substring(0, 10)}"
 forgix {
     group = "io.github.xiewuzhiying.vs_addition"
-    mergedJarName = "vs_addition-${version}.jar"
+    mergedJarName = "vs_addition_continue-${version}.jar"
     outputDir = "build/libs/merged"
 
     forge {
         projectName = "forge"
-        jarLocation = "build/libs/vs_addition-${minecraft_version}-forge-${mod_version}+${gitRevision.substring(0, 10)}.jar"
+        jarLocation = "build/libs/vs_addition_continue-${minecraft_version}-forge-${mod_version}+${gitRevision.substring(0, 10)}.jar"
     }
 
     fabric {
         projectName = "fabric"
-        jarLocation = "build/libs/vs_addition-${minecraft_version}-fabric-${mod_version}+${gitRevision.substring(0, 10)}.jar"
+        jarLocation = "build/libs/vs_addition_continue-${minecraft_version}-fabric-${mod_version}+${gitRevision.substring(0, 10)}.jar"
     }
 }
