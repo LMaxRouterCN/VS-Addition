@@ -1,4 +1,4 @@
-![v2-471ebe648a82d73899f4_1440w_2025-08-11_16-31-01](https://github.com/user-attachments/assets/5d40860f-82e5-4ac9-a4c5-1fbd9eb49c6e)
+![v2-471ebe648a82d73899f4_1440w_2025-08-11_16-31-01](https://github.com/user-attachments/assets/5d40860f-82e5-4ac9-a4c5-1fbd9eb49c6e)   
 有人觉得我应该把这个版本上传到Modrinth或curseforge上并起一个正式的名称以方便其他人寻找, 所以我这么做了.   
 遗憾的是我是个代码新手, 我能做的仅仅只是维持这个mod的生命, 进行一些简单的删改操作, 我并不能让这个mod起死回生.  
 Some people thought I should upload this version to Modrinth or curseforge and give it an official name so that others could find it easily, so I did. 
