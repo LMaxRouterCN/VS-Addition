@@ -25,7 +25,7 @@ Fixes (compared to the original):
 - Incompatible with [Valkyrien Skies](https://modrinth.com/mod/valkyrien-skies) 2.3.0-beta.6 and above;
 - Incompatible with [[TaCZ] Timeless and Classics Zero](https://modrinth.com/mod/timeless-and-classics-zero) 1.1.4 and above;
 - Incompatible with [CBCAT](https://modrinth.com/mod/create-big-cannons-advanced-technologies);
-- Fixed game crashes when reloading saves containing air chambers due to unserialized data;
+- Fixed game crashes when reloading saves containing air-pocket due to unserialized data;
 - Fixed crashes during startup caused by the original mod failing to check for [CC: Tweaked](https://modrinth.com/mod/cc-tweaked)'s installation, resulting in missing class errors.
 
 The mod's feature list can be viewed **[here](https://github.com/xiewuzhiying/VS-Addition/wiki/%E3%80%90%E4%B8%AD%E6%96%87%E3%80%91%E7%89%B9%E6%80%A7%E5%88%97%E8%A1%A8)**.(Only Chinese)
