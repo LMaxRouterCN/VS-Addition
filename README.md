@@ -4,7 +4,7 @@
 
 
 | [<img height="100" alt="image" src="https://github.com/user-attachments/assets/dcf10e7d-6cd3-4899-b5b8-dbc09632ac16" />](https://www.mcmod.cn/class/21428.html)  | [<img height="100" alt="modrinth-new" src="https://github.com/user-attachments/assets/cf71d749-9b74-485c-8508-5f36ec9f2138" />](https://modrinth.com/mod/vs-addition-continue) |
-|-------|-------|
+|:-----:|:-----:|
 
 
 ---
