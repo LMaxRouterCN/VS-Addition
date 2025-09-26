@@ -8,7 +8,8 @@ import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.client.Minecraft;
 import org.joml.Matrix4d;
 import org.joml.Matrix4dc;
-import org.joml.Vector3d;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.Shadow;
@@ -20,16 +21,18 @@ import xaero.common.minimap.render.MinimapRenderer;
 
 @Pseudo
 @Restriction(
-        require = @Condition("xaerominimapfair")
+        require = @Condition("xaerominimap")
 )
 @Mixin(MinimapRenderer.class)
 public abstract class MixinMinimapRenderer {
 
     @Shadow(remap = false) protected Minecraft mc;
+
     @Unique
-    private Matrix4dc vs_addition$latestMatrix4d = new Matrix4d();
+    private Matrix4dc vs_addition$prevShipTransform = new Matrix4d();
+
     @Unique
-    private double vs_addition$shipYawAngle = 0;
+    private double vs_addition$shipYawOffset = 0;
 
     @WrapOperation(
             method = "renderMinimap",
@@ -48,7 +51,7 @@ public abstract class MixinMinimapRenderer {
             ClientShip ship = vs_addition$getMountedShip();
             if (ship != null) {
                 vs_addition$updateShipData(ship);
-                return original.call(instance, false) + vs_addition$shipYawAngle;
+                return original.call(instance, false) + vs_addition$shipYawOffset;
             }
             vs_addition$resetShipData();
             return original.call(instance, false);
@@ -67,7 +70,7 @@ public abstract class MixinMinimapRenderer {
         ClientShip ship = vs_addition$getMountedShip();
         if (ship != null) {
             vs_addition$updateShipData(ship);
-            return (float) (original - vs_addition$shipYawAngle);
+            return (float) (original - vs_addition$shipYawOffset);
         }
         vs_addition$resetShipData();
         return original;
@@ -80,18 +83,24 @@ public abstract class MixinMinimapRenderer {
 
     @Unique
     private void vs_addition$updateShipData(ClientShip ship) {
-        Matrix4d matrix = ship.getRenderTransform()
-                .getShipToWorld()
-                .invert(new Matrix4d())
-                .mul(vs_addition$latestMatrix4d);
+        Matrix4d currentTransform = new Matrix4d(ship.getRenderTransform().getShipToWorld());
 
-        vs_addition$latestMatrix4d = ship.getRenderTransform().getShipToWorld();
-        vs_addition$shipYawAngle += Math.toDegrees(Math.atan2(-matrix.getRow(0, new Vector3d()).z, matrix.getRow(2, new Vector3d()).z));
+        if (vs_addition$prevShipTransform != null) {
+            // 计算相对变换：prev⁻¹ × current
+            Matrix4d relativeTransform = new Matrix4d(vs_addition$prevShipTransform).invert().mul(currentTransform);
+
+            // 从变换矩阵中提取偏航角（Yaw）
+            // 使用矩阵的m20和m22元素来计算偏航角
+            double yawChange = Math.atan2(-relativeTransform.m20(), relativeTransform.m22());
+            vs_addition$shipYawOffset += Math.toDegrees(yawChange);
+        }
+
+        vs_addition$prevShipTransform = currentTransform;
     }
 
     @Unique
     private void vs_addition$resetShipData() {
-        vs_addition$latestMatrix4d = new Matrix4d();
-        vs_addition$shipYawAngle = 0;
+        vs_addition$prevShipTransform = new Matrix4d();
+        vs_addition$shipYawOffset = 0;
     }
 }
