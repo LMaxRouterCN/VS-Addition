@@ -35,8 +35,8 @@ subprojects {
         maven { name = "Valkyrien Skies"; url = "https://maven.valkyrienskies.org" }
         maven { url = "https://modmaven.dev" }
         maven { url = "https://maven.tterrag.com" }
-        mavenLocal()
         maven { name = 'Kotlin for Forge'; url = 'https://thedarkcolour.github.io/KotlinForForge/'; content { includeGroup "thedarkcolour" } }
+        mavenLocal()
     }
 
     dependencies {
