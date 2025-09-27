@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
     id "com.matthewprenger.cursegradle"
@@ -22,8 +24,9 @@ configurations {
             runtimeClasspath.extendsFrom common
             developmentFabric.extendsFrom common
 }
-String gitRevision = "git rev-parse HEAD".execute().text.trim()
-version = minecraft_version + "-" + String.valueOf(loader_platform).toLowerCase() + "-" + mod_version + "+" + gitRevision.substring(0, 10)
+
+def buildTimestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
+version = minecraft_version + "-" + String.valueOf(loader_platform).toLowerCase() + "-" + mod_version + "+" + buildTimestamp
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"

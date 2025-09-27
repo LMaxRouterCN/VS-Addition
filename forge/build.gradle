@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 buildscript {
     repositories {
         mavenCentral()
@@ -16,6 +18,9 @@ plugins {
     id "com.matthewprenger.cursegradle"
     id "com.modrinth.minotaur"
 }
+
+def buildTimestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
+version = minecraft_version + "-" + String.valueOf(loader_platform).toLowerCase() + "-" + mod_version + "+" + buildTimestamp
 
 apply from: '../gradle-scripts/publish-curseforge.gradle'
 
