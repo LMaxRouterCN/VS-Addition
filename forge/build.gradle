@@ -4,9 +4,10 @@ buildscript {
     }
     dependencies {
         // Make sure this version matches the one included in Kotlin for Forge
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10'
         // OPTIONAL Gradle plugin for Kotlin Serialization
-        classpath 'org.jetbrains.kotlin:kotlin-serialization:1.6.10'
+        classpath 'org.jetbrains.kotlin:kotlin-serialization:1.9.10'
+        // bsgm这俩有什么特殊的不能写下面那堆里吗?
     }
 }
 
@@ -41,8 +42,6 @@ configurations {
             runtimeClasspath.extendsFrom common
             developmentForge.extendsFrom common
 }
-String gitRevision = "git rev-parse HEAD".execute().text.trim()
-version = minecraft_version + "-" + String.valueOf(loader_platform).toLowerCase() + "-" + mod_version + "+" + gitRevision.substring(0, 10)
 
 dependencies {
     forge "net.minecraftforge:forge:$forge_version"

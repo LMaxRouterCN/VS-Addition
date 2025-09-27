@@ -37,8 +37,8 @@ dependencies {
     compileOnly("org.valkyrienskies.core:util:${rootProject.vscore_version}")
     compileOnly("org.valkyrienskies.core:impl:${rootProject.vscore_version}")
 
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10"
-    api "org.jetbrains.kotlin:kotlin-reflect:1.9.10"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${common_kotlin_version}"
+    api "org.jetbrains.kotlin:kotlin-reflect:${common_kotlin_version}"
 
     //Common create compats,
     //We just use a version from a platform and hope the classes exist on both versions and mixins apply correctly
