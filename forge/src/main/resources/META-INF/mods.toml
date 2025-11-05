@@ -6,7 +6,7 @@ license = "Apache-2.0"
 [[mods]]
 modId = "vs_addition"
 version = "${version}"
-displayName = "VS Addition"
+displayName = "VS Addition continue"
 authors = ["xiewuzhiying"]
 description = '''
 Some little additions for VS2 and other mods.
