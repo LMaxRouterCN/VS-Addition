@@ -7,9 +7,9 @@ license = "Apache-2.0"
 modId = "vs_addition"
 version = "${version}"
 displayName = "VS Addition continue"
-authors = ["xiewuzhiying"]
+authors = ["LMaxRouterCN"]
 description = '''
-Some little additions for VS2 and other mods.
+vsadd's continued update version
 '''
 logoFile = "icon.png"
 

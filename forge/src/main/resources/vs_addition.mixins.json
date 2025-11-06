@@ -39,8 +39,7 @@
     "netmusic.client.MixinMusicToClientMessage",
     "presencefootsteps.client.MixinPFSolver",
     "presencefootsteps.client.MixinTerrestrialStepSoundGenerator",
-    "tacz.client.MixinBulletHoleParticle",
-    "xaeros_minimap.client.MixinMinimapRenderer"
+    "tacz.client.MixinBulletHoleParticle"
   ],
   "injectors": {
     "defaultRequire": 1
