@@ -87,9 +87,13 @@ dependencies {
     implementation("thedarkcolour:kotlinforforge:$forge_kotlin_version")
 
     // Create compats
-    modImplementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
-    modImplementation("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
-    modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
+    // Create Mod, see https://wiki.createmod.net/developers/depend-on-create/forge-1.20.1
+    modImplementation("com.simibubi.create:create-${property("minecraft_version")}:${property("forge_create_version")}:slim") { transitive = false }
+    modImplementation("net.createmod.ponder:Ponder-Forge-${property("minecraft_version")}:${property("forge_ponder_version")}")
+    modCompileOnly("net.createmod.ponder:Ponder-Common-${minecraft_version}:${forge_ponder_version}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-forge-api-${property("minecraft_version")}:${property("forge_flywheel_version")}")
+    modRuntimeOnly("dev.engine-room.flywheel:flywheel-forge-${property("minecraft_version")}:${property("forge_flywheel_version")}")
+    modImplementation("com.tterrag.registrate:Registrate:${property("registrate_version")}")
 
     // ComputerCraft
     modImplementation("maven.modrinth:cc-tweaked:1j4A6uXh")
@@ -104,7 +108,7 @@ dependencies {
     modImplementation("maven.modrinth:framedblocks:9.2.2")
 
     // Copycat+
-    modImplementation("maven.modrinth:copycats:2.1.4+mc.1.20.1-forge")
+    modImplementation("maven.modrinth:copycats:3.0.2+mc.1.20.1-forge")
 
     // CBC
     String rplSuffix = Boolean.valueOf(use_local_rpl_build) ? "" : "-build.${rpl_build}";

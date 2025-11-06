@@ -6,7 +6,7 @@ import com.simibubi.create.content.kinetics.deployer.DeployerBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollOptionBehaviour;
-import com.simibubi.create.foundation.utility.Lang;
+import com.simibubi.create.foundation.utility.CreateLang;
 import io.github.xiewuzhiying.vs_addition.compats.create.content.kinetics.deployer.DeployerScrollOptionSlot;
 import io.github.xiewuzhiying.vs_addition.mixinducks.create.deployer.IDeployerBehavior;
 import io.github.xiewuzhiying.vs_addition.context.conditiontester.InteractiveConditionTester;
@@ -49,7 +49,7 @@ public abstract class MixinDeployerBlockEntity extends KineticBlockEntity implem
     public void behaviour(List<BlockEntityBehaviour> behaviours, CallbackInfo ci) {
         this.workingMode = new ScrollOptionBehaviour<>(
                 IDeployerBehavior.WorkigMode.class,
-                Lang.translateDirect("vs_addition.working_mode"),
+                CreateLang.translateDirect("vs_addition.working_mode"),
                 (DeployerBlockEntity)(Object) this,
                 vs_addition$getMovementModeSlot()
         );

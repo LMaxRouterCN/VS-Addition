@@ -1,7 +1,5 @@
 package io.github.xiewuzhiying.vs_addition.compats.vs_clockwork
 
-import com.simibubi.create.foundation.placement.IPlacementHelper
-import com.simibubi.create.foundation.placement.PlacementOffset
 import net.minecraft.MethodsReturnNonnullByDefault
 import net.minecraft.core.BlockPos
 import net.minecraft.world.entity.player.Player
@@ -9,6 +7,8 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
+import net.createmod.catnip.placement.IPlacementHelper
+import net.createmod.catnip.placement.PlacementOffset
 import org.valkyrienskies.clockwork.ClockworkBlocks
 import org.valkyrienskies.clockwork.content.physicalities.wing.FlapBlock
 import org.valkyrienskies.clockwork.util.blocktype.ConnectedWingAlike

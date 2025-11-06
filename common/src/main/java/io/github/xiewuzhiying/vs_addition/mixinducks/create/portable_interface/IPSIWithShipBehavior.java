@@ -3,7 +3,7 @@ package io.github.xiewuzhiying.vs_addition.mixinducks.create.portable_interface;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.INamedIconOptions;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollOptionBehaviour;
 import com.simibubi.create.foundation.gui.AllIcons;
-import com.simibubi.create.foundation.utility.Lang;
+import net.createmod.catnip.lang.Lang;
 import io.github.xiewuzhiying.vs_addition.compats.create.content.contraptions.actors.psi.PortableStorageInterfaceWithShipController;
 
 public interface IPSIWithShipBehavior {

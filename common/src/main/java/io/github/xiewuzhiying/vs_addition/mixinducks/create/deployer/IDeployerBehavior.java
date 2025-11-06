@@ -3,7 +3,7 @@ package io.github.xiewuzhiying.vs_addition.mixinducks.create.deployer;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.INamedIconOptions;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollOptionBehaviour;
 import com.simibubi.create.foundation.gui.AllIcons;
-import com.simibubi.create.foundation.utility.Lang;
+import net.createmod.catnip.lang.Lang;
 
 public interface IDeployerBehavior {
     default ScrollOptionBehaviour<WorkigMode> vs_addition$getWorkingMode() {

@@ -1,9 +1,6 @@
 package io.github.xiewuzhiying.vs_addition.compats.create.content.decoration.copycat
 
 import com.simibubi.create.AllBlocks
-import com.simibubi.create.foundation.utility.Lang
-import com.simibubi.create.foundation.utility.LangBuilder
-import com.simibubi.create.foundation.utility.LangNumberFormat
 import io.github.xiewuzhiying.vs_addition.VSAdditionMod
 import io.github.xiewuzhiying.vs_addition.util.addMass
 import io.github.xiewuzhiying.vs_addition.util.getMass
@@ -13,6 +10,10 @@ import net.minecraft.network.chat.Component
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.VoxelShape
+import net.minecraft.world.phys.shapes.CollisionContext
+import net.createmod.catnip.lang.LangBuilder
+import net.createmod.catnip.lang.Lang
+import net.createmod.catnip.lang.LangNumberFormat
 import org.valkyrienskies.core.api.ships.ServerShip
 import org.valkyrienskies.core.api.ships.Ship
 
@@ -35,12 +36,12 @@ open class CopycatMassHandler(val level: Level, val blockPos: BlockPos, val ship
             val oldMul = getMultiplier(this.oldBlockState.block.getShape(
                 this.getBlockState(),
                 this.level,
-                this.blockPos, null))
+                this.blockPos, CollisionContext.empty()))
 
             val mul = getMultiplier(this.getBlockState().block.getShape(
                 this.getBlockState(),
                 this.level,
-                this.blockPos, null))
+                this.blockPos, CollisionContext.empty()))
             this.addedMass =  (getMass(getMaterial()) * mul - getMass(this.oldMaterial) * oldMul)
             if (!this.level.isClientSide()) {
                 (this.ship as ServerShip).addMass(this.addedMass, this.blockPos)

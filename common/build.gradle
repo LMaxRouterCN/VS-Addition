@@ -48,7 +48,9 @@ dependencies {
     modCompileOnly("com.simibubi.create:create-fabric-${minecraft_version}:${create_fabric_version}")
             { exclude group: 'com.github.AlphaMode', module: 'fakeconfigtoml' }
     modCompileOnly("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
-    modCompileOnly("com.jozufozu.flywheel:flywheel-fabric-${minecraft_version}:${flywheel_version_fabric}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-fabric-api-${minecraft_version}:${flywheel_version_fabric}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-fabric-${minecraft_version}:${flywheel_version_fabric}")
+    modImplementation("net.createmod.ponder:Ponder-Common-${minecraft_version}:${ponder_version_fabric}")
 
     // CBC
     // Change the previous section
@@ -66,7 +68,7 @@ dependencies {
     modCompileOnly("maven.modrinth:create-clockwork:EvNWNIMY")
 
     //Copycat+
-    modCompileOnly("maven.modrinth:copycats:2.1.4+mc.1.20.1-fabric")
+    modCompileOnly("maven.modrinth:copycats:3.0.2+mc.1.20.1-forge")
 
     //CC&A
     modImplementation("maven.modrinth:createaddition:vV4bZmhm")

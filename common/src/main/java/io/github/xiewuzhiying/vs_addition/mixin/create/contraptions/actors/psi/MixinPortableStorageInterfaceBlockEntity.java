@@ -8,7 +8,7 @@ import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterf
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollOptionBehaviour;
-import com.simibubi.create.foundation.utility.Lang;
+import com.simibubi.create.foundation.utility.CreateLang;
 import io.github.xiewuzhiying.vs_addition.compats.create.content.contraptions.actors.psi.PortableStorageInterfaceConstraintManager;
 import io.github.xiewuzhiying.vs_addition.compats.create.content.contraptions.actors.psi.PortableStorageInterfaceWithShipController;
 import io.github.xiewuzhiying.vs_addition.mixinducks.create.portable_interface.IPSIWithShipBehavior;
@@ -90,7 +90,7 @@ public abstract class MixinPortableStorageInterfaceBlockEntity implements IPSIWi
             remap = false
     )
     public void behaviour(List<BlockEntityBehaviour> behaviours, CallbackInfo ci) {
-        this.vs_addition$workingMode = new ScrollOptionBehaviour<>(IPSIWithShipBehavior.WorkigMode.class, Lang.translateDirect("vs_addition.working_mode"), (PortableStorageInterfaceBlockEntity)(Object) this, vs_addition$getMovementModeSlot());
+        this.vs_addition$workingMode = new ScrollOptionBehaviour<>(IPSIWithShipBehavior.WorkigMode.class, CreateLang.translateDirect("vs_addition.working_mode"), (PortableStorageInterfaceBlockEntity)(Object) this, vs_addition$getMovementModeSlot());
         behaviours.add(this.vs_addition$workingMode);
     }
 

@@ -8,7 +8,6 @@ import com.simibubi.create.foundation.blockEntity.SmartBlockEntity
 import com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform
-import com.simibubi.create.foundation.utility.Couple
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.nbt.CompoundTag
@@ -17,6 +16,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.Vec3
+import net.createmod.catnip.data.Couple
 import org.apache.commons.lang3.tuple.Pair
 import org.valkyrienskies.core.api.ships.Ship
 import org.valkyrienskies.mod.common.getShipManagingPos
@@ -186,7 +186,7 @@ open class DualLinkBehaviour protected constructor(
         }
 
         val localHit = pos1.subtract(pos2)
-        return (if (first) firstSlot else secondSlot).testHit(state, localHit)
+        return (if (first) firstSlot else secondSlot).testHit(level, pos, state, localHit)
     }
 
     override fun isAlive(): Boolean {

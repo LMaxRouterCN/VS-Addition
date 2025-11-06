@@ -2,7 +2,6 @@ package io.github.xiewuzhiying.vs_addition
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.module.SimpleModule
-import com.simibubi.create.content.redstone.displayLink.AllDisplayBehaviours
 import dev.architectury.event.events.client.ClientCommandRegistrationEvent
 import dev.architectury.event.events.client.ClientTickEvent
 import dev.architectury.event.events.common.CommandRegistrationEvent
@@ -76,12 +75,12 @@ object VSAdditionMod {
 
         NonColliderBlockStateProvider.register()
 
-        if (CREATE_ACTIVE) {
-            AllDisplayBehaviours.register(
-                ShipDataDisplaySource.id,
-                ShipDataDisplaySource()
-            )
-        }
+        //if (CREATE_ACTIVE) {
+        //    AllDisplayBehaviours.register(
+        //        ShipDataDisplaySource.id,
+        //        ShipDataDisplaySource()
+        //    )
+        //}
 
         if (CLOCKWORK_ACTIVE) {
             InteractionEvent.RIGHT_CLICK_BLOCK.register(RightClickBlock { player, hand, pos, face ->

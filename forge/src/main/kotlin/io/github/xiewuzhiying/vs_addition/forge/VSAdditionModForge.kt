@@ -1,6 +1,6 @@
 package io.github.xiewuzhiying.vs_addition.forge
 
-import com.simibubi.create.content.redstone.displayLink.AllDisplayBehaviours
+//import com.simibubi.create.content.redstone.displayLink.AllDisplayBehaviours
 import dev.architectury.platform.forge.EventBuses
 import io.github.xiewuzhiying.vs_addition.VSAdditionConfig
 import io.github.xiewuzhiying.vs_addition.VSAdditionMod
@@ -9,7 +9,7 @@ import io.github.xiewuzhiying.vs_addition.VSAdditionMod.initClient
 import io.github.xiewuzhiying.vs_addition.compats.computercraft.PeripheralCommon.registerGenericPeripheralCommon
 import io.github.xiewuzhiying.vs_addition.forge.compats.computercraft.ForgePeripheralProvider
 import io.github.xiewuzhiying.vs_addition.forge.compats.computercraft.PeripheralForge.registerGenericPeripheralForge
-import io.github.xiewuzhiying.vs_addition.forge.compats.create.content.redstone.display_link.target.FramedSignDisplayTarget
+// io.github.xiewuzhiying.vs_addition.forge.compats.create.content.redstone.display_link.target.FramedSignDisplayTarget
 import io.github.xiewuzhiying.vs_addition.context.airpocket.FakeAirPocketClient
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
@@ -57,15 +57,15 @@ object VSAdditionModForge {
 
     private fun commonSetup(event: FMLCommonSetupEvent) {
         if (VSAdditionMod.FRAMEDBLOCKS_ACTIVE && VSAdditionMod.CREATE_ACTIVE)
-            AllDisplayBehaviours.assignBlockEntity(
-                AllDisplayBehaviours.register(
-                    ResourceLocation(
-                        VSAdditionMod.MOD_ID,
-                        "framed_sign_display_target"
-                    ),
-                    FramedSignDisplayTarget()
-                ), FBContent.BE_TYPE_FRAMED_SIGN.get()
-            )
+            //AllDisplayBehaviours.assignBlockEntity(
+            //    AllDisplayBehaviours.register(
+            //        ResourceLocation(
+            //            VSAdditionMod.MOD_ID,
+            //            "framed_sign_display_target"
+            //        ),
+            //        FramedSignDisplayTarget()
+            //    ), FBContent.BE_TYPE_FRAMED_SIGN.get()
+            //)
 
         if (VSAdditionMod.CC_ACTIVE) {
             registerGenericPeripheralCommon()
