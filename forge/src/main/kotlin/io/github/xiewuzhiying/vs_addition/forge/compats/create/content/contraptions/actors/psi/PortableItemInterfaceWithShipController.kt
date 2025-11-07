@@ -33,22 +33,34 @@ open class PortableItemInterfaceWithShipController(be: PortableItemInterfaceBloc
     override fun stopTransferring() {
         if (!this.isPassive) {
             val level = this.be.level
-            val capability = this.capability
-            if (capability != null && level != null) {
-                val center = getConnectionCenter()
-                val storage = capability.resolve().get()
-                for (i in 0 until  storage.slots) {
-                    val entity = ItemEntity(level, center.x, center.y, center.z, storage.getStackInSlot(i))
-                    level.addFreshEntity(entity)
+            val capOptional = this.capability
+
+            // 安全处理 capability，避免 NoSuchElement 异常
+            if (capOptional != null && level != null) {
+                // 检查 capability 是否仍然有效
+                val storage = capOptional.resolve().orElse(null)
+                if (storage != null) {
+                    val center = getConnectionCenter()
+                    for (i in 0 until storage.slots) {
+                        val entity = ItemEntity(level, center.x, center.y, center.z, storage.getStackInSlot(i))
+                        level.addFreshEntity(entity)
+                    }
                 }
             }
+
+            // 安全处理 capability 无效化
             var oldCap = capability
             this.capability = createEmptyHandler(be as IPSIWithShipBehavior)
             oldCap?.invalidate()
-            oldCap = (other as? PortableItemInterfaceWithShipController)?.capability
-            (other as? PortableItemInterfaceWithShipController)?.capability = createEmptyHandler(be as IPSIWithShipBehavior)
-            oldCap?.invalidate()
-            other?.let { it.isPassive = false }
+
+            // 安全处理 other controller
+            val otherController = other as? PortableItemInterfaceWithShipController
+            if (otherController != null) {
+                oldCap = otherController.capability
+                otherController.capability = createEmptyHandler(be as IPSIWithShipBehavior)
+                oldCap?.invalidate()
+                otherController.isPassive = false
+            }
         }
         super.stopTransferring()
     }
