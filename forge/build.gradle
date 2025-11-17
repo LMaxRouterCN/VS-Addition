@@ -126,7 +126,7 @@ dependencies {
     modImplementation("maven.modrinth:timeless-and-classics-zero:Qd1RlJ8k")
 
     // Net Music
-    modImplementation("maven.modrinth:net-music:1IkUTusQ")
+    modImplementation("maven.modrinth:net-music:2JZCOLfk")
 
     // Embeddium
     modCompileOnly("maven.modrinth:embeddium:0.3.31+mc1.20.1")

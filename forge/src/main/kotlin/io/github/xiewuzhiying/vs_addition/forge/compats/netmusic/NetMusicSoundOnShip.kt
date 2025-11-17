@@ -1,5 +1,6 @@
 package io.github.xiewuzhiying.vs_addition.forge.compats.netmusic
 
+import com.github.tartaricacid.netmusic.api.lyric.LyricRecord  // ← 新增导入
 import com.github.tartaricacid.netmusic.client.audio.NetMusicSound
 import net.minecraft.core.BlockPos
 import org.joml.Vector3d
@@ -8,10 +9,17 @@ import org.valkyrienskies.core.api.ships.Ship
 import org.valkyrienskies.mod.client.audio.VelocityTickableSoundInstance
 import java.net.URL
 
-class NetMusicSoundOnShip(pos: BlockPos, songUrl: URL, timeSecond: Int, private val ship: Ship) : NetMusicSound(
+class NetMusicSoundOnShip(
+    pos: BlockPos,
+    songUrl: URL,
+    timeSecond: Int,
+    lyric: LyricRecord?,  // ← 新增参数（可为空）
+    private val ship: Ship
+) : NetMusicSound(
     pos,
     songUrl,
-    timeSecond
+    timeSecond,
+    lyric  // ← 传递给父类
 ), VelocityTickableSoundInstance {
 
     private val originalPos = Vector3d(x, y, z)
