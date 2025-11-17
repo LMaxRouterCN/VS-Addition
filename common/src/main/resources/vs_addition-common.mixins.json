@@ -17,7 +17,6 @@
     "create.decoration.copycat.MixinCopycatBlockEntity",
     "create.equipment.tree_fertilizer.MixinServerLevel",
     "create.equipment.tree_fertilizer.TreesDreamWorldAccssor",
-    "create.kinetics.deployer.MixinDeployerBlockEntity",
     "create.kinetics.fan.MixinAirCurrent",
     "create.kinetics.fan.MixinNozzleBlockEntity",
     "create.kinetics.mechanicalArm.ArmBlockEntityMixinAccessor",
