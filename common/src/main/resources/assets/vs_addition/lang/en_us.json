@@ -1,7 +1,7 @@
 {
-  "create.vs_addition.working_mode" : "Working Mode",
-  "create.vs_addition.working_mode.original" : "Original behavior",
-  "create.vs_addition.working_mode.with_ship" : "Another behavior for ships",
+  "vs_addition.working_mode" : "Working Mode",
+  "vs_addition.working_mode.original" : "Original behavior",
+  "vs_addition.working_mode.with_ship" : "Another behavior for ships",
 
   "vs_addition.command.fake_air_pocket.add": "Added a fake air pocket from (%1$s, %2$s, %3$s) to (%4$s, %5$s, %6$s)!\n Ship ID: %7$s\n Pocket ID: %8$s",
   "vs_addition.command.fake_air_pocket.remove": "Removed the fake air pocket!\n Ship ID: %1$s\n Pocket ID: %2$s",
