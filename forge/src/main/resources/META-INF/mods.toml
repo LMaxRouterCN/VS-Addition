@@ -1,15 +1,15 @@
 modLoader = "kotlinforforge"
 loaderVersion = "[4,)"
-issueTrackerURL = "https://github.com/xiewuzhiying/VS-Addition/issues"
+issueTrackerURL = "https://github.com/LMaxRouterCN/VS-Addition-continue/issues"
 license = "Apache-2.0"
 
 [[mods]]
 modId = "vs_addition"
 version = "${version}"
-displayName = "VS Addition"
-authors = ["xiewuzhiying"]
+displayName = "VS Addition continue"
+authors = ["LMaxRouterCN"]
 description = '''
-Some little additions for VS2 and other mods.
+vsadd's continued update version
 '''
 logoFile = "icon.png"
 
@@ -63,7 +63,7 @@ curseforge="valkyrien-skies"
 [[dependencies.vs_addition]]
 modId = "create"
 mandatory = false
-versionRange = "[0.5.1,)"
+versionRange = "[6.0.0,)"
 ordering = "AFTER"
 side = "BOTH"
 

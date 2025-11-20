@@ -3,11 +3,11 @@ package io.github.xiewuzhiying.vs_addition.compats.create.content.contraptions.a
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceBlock
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceBlockEntity
 import com.simibubi.create.foundation.advancement.AllAdvancements
-import com.simibubi.create.foundation.utility.animation.LerpedFloat
 import com.simibubi.create.infrastructure.config.AllConfigs
 import io.github.xiewuzhiying.vs_addition.mixinducks.create.portable_interface.IPSIWithShipBehavior
 import io.github.xiewuzhiying.vs_addition.util.centerJOMLD
 import io.github.xiewuzhiying.vs_addition.util.toVector3d
+import net.createmod.catnip.animation.LerpedFloat
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.Mth

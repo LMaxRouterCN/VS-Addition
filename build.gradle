@@ -1,6 +1,8 @@
+import java.text.SimpleDateFormat
+
 plugins {
-    id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.7-SNAPSHOT" apply false
+    id "architectury-plugin" version "3.4.162"
+    id "dev.architectury.loom" version "1.9.436" apply false
     id "org.jetbrains.kotlin.jvm" version "1.9.10" apply false
     id 'com.matthewprenger.cursegradle' version '1.4.0' apply false
     id "com.modrinth.minotaur" version "2.4.5" apply false
@@ -35,8 +37,8 @@ subprojects {
         maven { name = "Valkyrien Skies"; url = "https://maven.valkyrienskies.org" }
         maven { url = "https://modmaven.dev" }
         maven { url = "https://maven.tterrag.com" }
-        mavenLocal()
         maven { name = 'Kotlin for Forge'; url = 'https://thedarkcolour.github.io/KotlinForForge/'; content { includeGroup "thedarkcolour" } }
+        mavenLocal()
     }
 
     dependencies {
@@ -69,23 +71,32 @@ allprojects {
     group = rootProject.maven_group
 }
 
-tasks.named("build") {
-    finalizedBy("mergeJars")
+// 不知道为什么就做不到让他在最后自动mergeJars
+tasks.named('mergeJars') {
+    mustRunAfter(
+            project('common').tasks.named('transformProductionFabric'),
+            project('common').tasks.named('transformProductionForge')
+    )
+    dependsOn(
+            project('common').tasks.named('transformProductionFabric'),
+            project('common').tasks.named('transformProductionForge')
+    )
 }
-String gitRevision = "git rev-parse HEAD".execute().text.trim()
-version = "${minecraft_version}-${mod_version}+${gitRevision.substring(0, 10)}"
+
+def buildTimestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
+version = "${minecraft_version}-${mod_version}+${buildTimestamp}"
 forgix {
     group = "io.github.xiewuzhiying.vs_addition"
-    mergedJarName = "vs_addition-${version}.jar"
+    mergedJarName = "vs_addition_continue-${version}.jar"
     outputDir = "build/libs/merged"
 
     forge {
         projectName = "forge"
-        jarLocation = "build/libs/vs_addition-${minecraft_version}-forge-${mod_version}+${gitRevision.substring(0, 10)}.jar"
+        jarLocation = "build/libs"
     }
 
     fabric {
         projectName = "fabric"
-        jarLocation = "build/libs/vs_addition-${minecraft_version}-fabric-${mod_version}+${gitRevision.substring(0, 10)}.jar"
+        jarLocation = "build/libs"
     }
 }

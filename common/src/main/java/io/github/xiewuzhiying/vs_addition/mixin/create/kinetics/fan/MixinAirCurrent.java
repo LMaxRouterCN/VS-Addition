@@ -73,7 +73,7 @@ public abstract class MixinAirCurrent {
         if(ship!=null && level.getBlockState(pos).isAir()){
             BlockPos newPos = BlockPos.containing(ConversionUtilsKt.toWorld(pos.getCenter(), ship));
             FanProcessingType type = original.call(level,newPos);
-            if(!(type.equals(AllFanProcessingTypes.NONE))){
+            if(!(type.equals(null))){
                 return type;
             }
         }
@@ -84,7 +84,7 @@ public abstract class MixinAirCurrent {
             if (ship != null) {
                 BlockPos newPos = BlockPos.containing(ConversionUtilsKt.toShipyardCoordinates(vec3, ship));
                 FanProcessingType type = original.call(level,newPos);
-                if(!(type.equals(AllFanProcessingTypes.NONE))){
+                if(!(type.equals(null))){
                     return type;
                 }
             }
@@ -150,14 +150,14 @@ public abstract class MixinAirCurrent {
                         if(thetaDeg>165)
                         {
                             FanProcessingType type = FanProcessingType.getAt(level, pos);
-                            if (type.equals(AllFanProcessingTypes.NONE)) {
+                            if (type.equals(null)) {
                                 type = segmentType;
                             }
                             this.affectedItemHandlers.add(Pair.of(behaviour, type));
                         }
                     } else if (direction == Direction.DOWN) {
                         FanProcessingType type = FanProcessingType.getAt(level, pos);
-                        if (type.equals(AllFanProcessingTypes.NONE)) {
+                        if (type.equals(null)) {
                             type = segmentType;
                         }
                         this.affectedItemHandlers.add(Pair.of(behaviour, type));

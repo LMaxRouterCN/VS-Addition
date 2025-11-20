@@ -1,7 +1,5 @@
 package io.github.xiewuzhiying.vs_addition.mixin.vs_clockwork.wing;
 
-import com.simibubi.create.foundation.placement.IPlacementHelper;
-import com.simibubi.create.foundation.placement.PlacementHelpers;
 import io.github.xiewuzhiying.vs_addition.compats.vs_clockwork.FlapPlacementHelper;
 import io.github.xiewuzhiying.vs_addition.compats.vs_clockwork.WingPlacementHelper;
 import net.minecraft.core.BlockPos;
@@ -13,6 +11,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.createmod.catnip.placement.IPlacementHelper;
+import net.createmod.catnip.placement.PlacementHelpers;
+import net.createmod.catnip.placement.PlacementOffset;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.Unique;

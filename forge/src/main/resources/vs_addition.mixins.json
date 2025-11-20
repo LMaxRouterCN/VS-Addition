@@ -16,9 +16,6 @@
     "create.contraptions.actors.psi.MixinPortableFluidInterfaceBlockEntity",
     "create.contraptions.actors.psi.MixinPortableItemInterfaceBlockEntity",
     "create.contraptions.actors.psi.MixinPortableStorageInterfaceBlockEntity",
-    "create.fluids.transfer.MixinFluidDrainingBehaviour",
-    "create.fluids.transfer.MixinFluidFillingBehaviour",
-    "create.fluids.transfer.MixinHosePulleyBlockEntity",
     "createaddition.portable_energy_interface.MixinPortableEnergyInterfaceBlockEntity",
     "createaddition.portable_energy_interface.MixinPortableStorageInterfaceBlockEntity",
     "netmusic.MusicToClientMessageAccessor",
@@ -39,8 +36,7 @@
     "netmusic.client.MixinMusicToClientMessage",
     "presencefootsteps.client.MixinPFSolver",
     "presencefootsteps.client.MixinTerrestrialStepSoundGenerator",
-    "tacz.client.MixinBulletHoleParticle",
-    "xaeros_minimap.client.MixinMinimapRenderer"
+    "tacz.client.MixinBulletHoleParticle"
   ],
   "injectors": {
     "defaultRequire": 1

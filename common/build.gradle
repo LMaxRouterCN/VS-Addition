@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 architectury {
     common(rootProject.enabled_platforms.split(","))
 }
@@ -5,8 +7,9 @@ architectury {
 loom {
     accessWidenerPath = file("src/main/resources/vs_addition.accesswidener")
 }
-String gitRevision = "git rev-parse HEAD".execute().text.trim()
-version = minecraft_version + "-" + String.valueOf(loader_platform).toLowerCase() + "-" + mod_version + "+" + gitRevision.substring(0, 10)
+
+def buildTimestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
+version = minecraft_version + "-" + String.valueOf(loader_platform).toLowerCase() + "-" + mod_version + "+" + buildTimestamp
 
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
@@ -37,15 +40,17 @@ dependencies {
     compileOnly("org.valkyrienskies.core:util:${rootProject.vscore_version}")
     compileOnly("org.valkyrienskies.core:impl:${rootProject.vscore_version}")
 
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10"
-    api "org.jetbrains.kotlin:kotlin-reflect:1.9.10"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${common_kotlin_version}"
+    api "org.jetbrains.kotlin:kotlin-reflect:${common_kotlin_version}"
 
     //Common create compats,
     //We just use a version from a platform and hope the classes exist on both versions and mixins apply correctly
     modCompileOnly("com.simibubi.create:create-fabric-${minecraft_version}:${create_fabric_version}")
             { exclude group: 'com.github.AlphaMode', module: 'fakeconfigtoml' }
     modCompileOnly("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
-    modCompileOnly("com.jozufozu.flywheel:flywheel-fabric-${minecraft_version}:${flywheel_version_fabric}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-fabric-api-${minecraft_version}:${flywheel_version_fabric}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-fabric-${minecraft_version}:${flywheel_version_fabric}")
+    modImplementation("net.createmod.ponder:Ponder-Common-${minecraft_version}:${ponder_version_fabric}")
 
     // CBC
     // Change the previous section
@@ -63,7 +68,7 @@ dependencies {
     modCompileOnly("maven.modrinth:create-clockwork:EvNWNIMY")
 
     //Copycat+
-    modCompileOnly("maven.modrinth:copycats:2.1.4+mc.1.20.1-fabric")
+    modCompileOnly("maven.modrinth:copycats:3.0.2+mc.1.20.1-forge")
 
     //CC&A
     modImplementation("maven.modrinth:createaddition:vV4bZmhm")

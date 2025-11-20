@@ -3,7 +3,7 @@ package io.github.xiewuzhiying.vs_addition.mixin.create.redstone.displayLink;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.simibubi.create.content.redstone.displayLink.DisplayLinkBlockItem;
+import com.simibubi.create.content.redstone.displayLink.ClickToLinkBlockItem;
 import io.github.xiewuzhiying.vs_addition.util.ConversionUtilsKt;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
@@ -14,8 +14,8 @@ import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Pseudo
-@Mixin(DisplayLinkBlockItem.class)
-public abstract class MixinDisplayLinkBlockItem {
+@Mixin(ClickToLinkBlockItem.class)
+public abstract class MixinClickToLinkBlockItem {
 
     @WrapOperation(
             method = "useOn",

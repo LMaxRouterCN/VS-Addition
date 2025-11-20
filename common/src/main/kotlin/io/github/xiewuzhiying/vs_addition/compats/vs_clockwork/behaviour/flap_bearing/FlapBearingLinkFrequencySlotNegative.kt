@@ -1,15 +1,17 @@
 package io.github.xiewuzhiying.vs_addition.compats.vs_clockwork.behaviour.flap_bearing
 
-import com.jozufozu.flywheel.util.transform.TransformStack
 import com.mojang.blaze3d.vertex.PoseStack
 import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock
-import com.simibubi.create.foundation.utility.VecHelper
 import net.minecraft.core.Direction
+import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.state.BlockState
+import net.minecraft.world.level.LevelAccessor
 import net.minecraft.world.phys.Vec3
+import net.createmod.catnip.math.VecHelper
+import dev.engine_room.flywheel.lib.transform.TransformStack
 
 class FlapBearingLinkFrequencySlotNegative(first: Boolean) : FlapBearingLinkFrequencySlot(first) {
-    override fun getLocalOffset(state: BlockState): Vec3 {
+    override fun getLocalOffset(level: LevelAccessor, pos: BlockPos, state: BlockState): Vec3 {
         val facing = state.getValue(DirectionalKineticBlock.FACING)
         var location = VecHelper.voxelSpace(-0.01, 6.0, 5.5)
 
@@ -27,8 +29,8 @@ class FlapBearingLinkFrequencySlotNegative(first: Boolean) : FlapBearingLinkFreq
         return location
     }
 
-    override fun rotate(state: BlockState, ms: PoseStack) {
-        super.rotate(state, ms)
-        TransformStack.cast(ms).rotateY(-180.0)
+    override fun rotate(level: LevelAccessor, pos: BlockPos, state: BlockState, ms: PoseStack) {
+        super.rotate(level, pos, state, ms)
+        TransformStack.of(ms).rotateY(-180.0f)
     }
 }

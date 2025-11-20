@@ -6,18 +6,20 @@ import com.simibubi.create.foundation.blockEntity.SmartBlockEntity
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBox
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxRenderer
-import com.simibubi.create.foundation.utility.Iterate
-import com.simibubi.create.foundation.utility.Lang
-import com.simibubi.create.foundation.utility.VecHelper
+import com.simibubi.create.foundation.utility.CreateLang
 import com.simibubi.create.infrastructure.config.AllConfigs
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
+import net.minecraft.network.chat.CommonComponents
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.phys.AABB
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.Vec3
+import net.createmod.catnip.data.Iterate
+import net.createmod.catnip.math.VecHelper
+import net.createmod.catnip.outliner.Outliner
 import org.valkyrienskies.mod.common.toShipRenderCoordinates
 
 
@@ -35,8 +37,8 @@ object DualLinkRenderer {
         val behaviour = BlockEntityBehaviour.get(world, pos, DualLinkBehaviour.TYPE)
             ?: return
 
-        val freq1: Component = Lang.translateDirect("logistics.firstFrequency")
-        val freq2: Component = Lang.translateDirect("logistics.secondFrequency")
+        val freq1: Component = CreateLang.translateDirect("logistics.firstFrequency")
+        val freq2: Component = CreateLang.translateDirect("logistics.secondFrequency")
 
         for (first in Iterate.trueAndFalse) {
             val bb = AABB(Vec3.ZERO, Vec3.ZERO).inflate(.25)
@@ -51,15 +53,20 @@ object DualLinkRenderer {
 
             if (!empty) box.wideOutline()
 
-            CreateClient.OUTLINER.showValueBox(Pair(first, pos), box.transform(transform))
+            Outliner.getInstance()
+                .showOutline(
+                    Pair(first, pos),
+                    ValueBox(CommonComponents.EMPTY, bb, pos).transform(transform)
+                )
                 .highlightFace(result.direction)
+
 
             if (!hit) continue
 
             val tip: MutableList<MutableComponent> = ArrayList()
             tip.add(label.copy())
             tip.add(
-                Lang.translateDirect(if (empty) "logistics.filter.click_to_set" else "logistics.filter.click_to_replace")
+                CreateLang.translateDirect(if (empty) "logistics.filter.click_to_set" else "logistics.filter.click_to_replace")
             )
             CreateClient.VALUE_SETTINGS_HANDLER.showHoverTip(tip)
         }
@@ -88,7 +95,7 @@ object DualLinkRenderer {
             val stack = if (first) behaviour.frequencyFirst.stack else behaviour.frequencyLast.stack
 
             ms.pushPose()
-            transform.transform(be.blockState, ms)
+            transform.transform(be.level, be.blockPos, be.blockState, ms)
             ValueBoxRenderer.renderItemIntoValueBox(stack, ms, buffer, light, overlay)
             ms.popPose()
         }

@@ -1,7 +1,7 @@
 {
-  "create.vs_addition.working_mode" : "工作模式",
-  "create.vs_addition.working_mode.original" : "默认行为",
-  "create.vs_addition.working_mode.with_ship" : "在物理结构上与世界交互",
+  "vs_addition.working_mode" : "工作模式",
+  "vs_addition.working_mode.original" : "动态结构行为",
+  "vs_addition.working_mode.with_ship" : "物理结构行为",
 
   "vs_addition.command.fake_air_pocket.add": "添加了一个从 (%1$s, %2$s, %3$s) 至 (%4$s, %5$s, %6$s) 的伪气室！\n 物理结构ID：%7$s\n 气室ID：%8$s",
   "vs_addition.command.fake_air_pocket.remove": "移除了伪气室！\n 物理结构ID：%1$s\n 气室ID：%2$s",

@@ -1,5 +1,6 @@
 package io.github.xiewuzhiying.vs_addition.forge.mixin.netmusic.client;
 
+import com.github.tartaricacid.netmusic.api.lyric.LyricRecord;  // ← 新增导入
 import com.github.tartaricacid.netmusic.network.message.MusicToClientMessage;
 import io.github.xiewuzhiying.vs_addition.forge.compats.netmusic.NetMusicSoundOnShip;
 import io.github.xiewuzhiying.vs_addition.forge.mixin.netmusic.MusicToClientMessageAccessor;
@@ -25,11 +26,22 @@ public abstract class MixinMusicToClientMessage {
             cancellable = true,
             remap = false
     )
-    private static void checkIfOnShip(MusicToClientMessage message, URL url, final CallbackInfoReturnable<SoundInstance> cir) {
+    private static void checkIfOnShip(
+            MusicToClientMessage message,
+            LyricRecord[] record,  // ← 新增参数
+            URL url,
+            final CallbackInfoReturnable<SoundInstance> cir
+    ) {
         BlockPos pos = ((MusicToClientMessageAccessor)message).getPos();
         final Ship ship = VSGameUtilsKt.getShipManagingPos(Minecraft.getInstance().level, pos.getX(), pos.getY(), pos.getZ());
         if (ship != null) {
-            cir.setReturnValue(new NetMusicSoundOnShip(pos, url, ((MusicToClientMessageAccessor)message).getTimeSecond(), ship));
+            cir.setReturnValue(new NetMusicSoundOnShip(
+                    pos,
+                    url,
+                    ((MusicToClientMessageAccessor)message).getTimeSecond(),
+                    record[0],  // ← 传递歌词对象
+                    ship
+            ));
         }
     }
 }

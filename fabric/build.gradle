@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
     id "com.matthewprenger.cursegradle"
@@ -22,8 +24,9 @@ configurations {
             runtimeClasspath.extendsFrom common
             developmentFabric.extendsFrom common
 }
-String gitRevision = "git rev-parse HEAD".execute().text.trim()
-version = minecraft_version + "-" + String.valueOf(loader_platform).toLowerCase() + "-" + mod_version + "+" + gitRevision.substring(0, 10)
+
+def buildTimestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
+version = minecraft_version + "-" + String.valueOf(loader_platform).toLowerCase() + "-" + mod_version + "+" + buildTimestamp
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
@@ -59,8 +62,8 @@ dependencies {
     compileOnly("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:impl:${rootProject.vs_core_version}")
 
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10"
-    api "org.jetbrains.kotlin:kotlin-reflect:1.9.10"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${fabric_kotlin_version}"
+    api "org.jetbrains.kotlin:kotlin-reflect:${fabric_kotlin_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
@@ -68,7 +71,9 @@ dependencies {
     modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_fabric_version}") {
         exclude group: 'com.github.AlphaMode', module: 'fakeconfigtoml'
     }
-    modImplementation("com.jozufozu.flywheel:flywheel-fabric-${minecraft_version}:${flywheel_version_fabric}")
+    modImplementation("dev.engine-room.flywheel:flywheel-fabric-${minecraft_version}:${flywheel_version_fabric}")
+    modCompileOnly("net.createmod.ponder:Ponder-Fabric-${minecraft_version}:${ponder_version_fabric}") { transitive false }
+    modCompileOnly("net.createmod.ponder:Ponder-Common-${minecraft_version}:${ponder_version_fabric}")
     modImplementation("com.tterrag.registrate_fabric:Registrate:${registrate_version}")
 
     modImplementation("io.github.fabricators_of_create.Porting-Lib:Porting-Lib:$port_lib_version")
