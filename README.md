@@ -20,6 +20,8 @@
 - 修复 气室未序列化的问题（重新进入包含气室的存档会导致游戏崩溃）；
 - 修复 原作并未检查 CC:T 是否已安装，因此在启动时找不到 CC 的类而导致崩溃。
 
+更多更新内容请查看[releases](https://github.com/LMaxRouterCN/VS-Addition-continue/releases)
+
 模组的特性列表可以在 [此处](https://github.com/xiewuzhiying/VS-Addition/wiki/%E3%80%90%E4%B8%AD%E6%96%87%E3%80%91%E7%89%B9%E6%80%A7%E5%88%97%E8%A1%A8) 查看。
 
 有人觉得我应该把这个版本上传到Modrinth或curseforge上并起一个正式的名称以方便其他人寻找, 所以我这么做了.    
@@ -32,11 +34,13 @@ This mod is a branch of VS Addition.
 It fixes several bugs and mod conflicts present in the original version. Due to being unable to contact the original author, this continuation update was created.
 
 Fixes (compared to the original):
-- Incompatible with [Valkyrien Skies](https://modrinth.com/mod/valkyrien-skies) 2.3.0-beta.6 and above;
-- Incompatible with [[TaCZ] Timeless and Classics Zero](https://modrinth.com/mod/timeless-and-classics-zero) 1.1.4 and above;
-- Incompatible with [CBCAT](https://modrinth.com/mod/create-big-cannons-advanced-technologies);
+- Incompatible with Valkyrien Skies 2.3.0-beta.6 and above;
+- Incompatible with [TaCZ]Timeless and Classics Zero 1.1.4 and above;
+- Incompatible with CBCAT;
 - Fixed game crashes when reloading saves containing air-pocket due to unserialized data;
-- Fixed crashes during startup caused by the original mod failing to check for [CC: Tweaked](https://modrinth.com/mod/cc-tweaked)'s installation, resulting in missing class errors.
+- Fixed crashes during startup caused by the original mod failing to check for CC:T's installation, resulting in missing class errors.
+
+For more updates, please check [releases](https://github.com/LMaxRouterCN/VS-Addition-continue/releases)
 
 The mod's feature list can be viewed **[here](https://github.com/xiewuzhiying/VS-Addition/wiki/%E3%80%90%E4%B8%AD%E6%96%87%E3%80%91%E7%89%B9%E6%80%A7%E5%88%97%E8%A1%A8)**.(Only Chinese)
 
