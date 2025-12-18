@@ -1,5 +1,5 @@
 {
-  "vs_addition.working_mode" : "Working Mode",
+  "create.vs_addition.working_mode" : "Working Mode",
   "vs_addition.working_mode.original" : "Original behaviour",
   "vs_addition.working_mode.with_ship" : "Another behaviour for ships",
 

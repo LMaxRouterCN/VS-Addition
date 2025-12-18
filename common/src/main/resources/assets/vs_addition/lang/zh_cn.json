@@ -1,5 +1,5 @@
 {
-  "vs_addition.working_mode" : "工作模式",
+  "create.vs_addition.working_mode" : "工作模式",
   "vs_addition.working_mode.original" : "动态结构行为",
   "vs_addition.working_mode.with_ship" : "物理结构行为",
 
@@ -36,5 +36,6 @@
   "direction.east": "东",
   "direction.west": "西",
   "direction.south": "南",
-  "direction.north": "北"
+  "direction.north": "北",
+  "vs_addition.working_mode": "Working Mode"
 }
