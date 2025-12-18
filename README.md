@@ -1,11 +1,7 @@
 ![v2-471ebe648a82d73899f4_1440w_2025-08-11_16-31-01](https://github.com/user-attachments/assets/5d40860f-82e5-4ac9-a4c5-1fbd9eb49c6e)    
 
-
-
-
-| [<img height="100" alt="image" src="https://github.com/user-attachments/assets/dcf10e7d-6cd3-4899-b5b8-dbc09632ac16" />](https://www.mcmod.cn/class/21428.html)  | [<img height="100" alt="modrinth-new" src="https://github.com/user-attachments/assets/cf71d749-9b74-485c-8508-5f36ec9f2138" />](https://modrinth.com/mod/vs-addition-continue) |
-|:-----:|:-----:|
-
+|[<img height="100" alt="image" src="https://github.com/user-attachments/assets/dcf10e7d-6cd3-4899-b5b8-dbc09632ac16" />](https://www.mcmod.cn/class/21428.html)|[<img height="100" alt="modrinth-new" src="https://github.com/user-attachments/assets/cf71d749-9b74-485c-8508-5f36ec9f2138" />](https://modrinth.com/mod/vs-addition-continue)|[<img height="100" alt="image" src="https://github.com/user-attachments/assets/0278d30e-019b-4b7b-a0f2-c5cc6bc25a74" />](https://www.curseforge.com/minecraft/mc-mods/vs-addition-continue)|
+|:-----:|:-----:|:-----:|
 
 ---
 
