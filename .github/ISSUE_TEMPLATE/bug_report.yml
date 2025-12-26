@@ -1,6 +1,6 @@
 name: 报告bug/Bug report 
 description: Let us know about a bug that occurs without other mods
-title: ''
+title: '[bug]'
 labels: bug
 assignees: []
 body:
