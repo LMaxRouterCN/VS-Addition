@@ -3,3 +3,9 @@ description: Let us know about a bug that occurs without other mods
 title: '[suggest]'
 labels: suggest
 assignees: []
+body:
+- type: textarea
+  attributes:
+    description: Describe what happens, and what you expect to happen instead
+  validations:
+    required: true
