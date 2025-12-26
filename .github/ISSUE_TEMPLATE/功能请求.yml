@@ -1,1 +1,5 @@
-
+name: 建议/suggest
+description: Let us know about a bug that occurs without other mods
+title: '[suggest]'
+labels: suggest
+assignees: []
