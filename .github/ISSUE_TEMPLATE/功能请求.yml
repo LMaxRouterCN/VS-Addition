@@ -6,6 +6,6 @@ assignees: []
 body:
 - type: textarea
   attributes:
-    description: Describe what happens, and what you expect to happen instead
+    label: 有何想法?/Any thoughts?
   validations:
-    required: true
+    required: false
