@@ -5,6 +5,11 @@
 
 ---
 
+## This mod has been discontinued. It does not support VS2.4, for details see https://github.com/LMaxRouterCN/VS-Addition-continue/issues/14
+## 这个模组已经停更. 它不支持VS2.4, 详情见 https://github.com/LMaxRouterCN/VS-Addition-continue/issues/14
+
+---
+
 此模组是 VS Addition 的分支版本。   
 
 修复了原作的一些 Bug 和模组冲突，因无法联系到原作者，因此制作此续更版。   
